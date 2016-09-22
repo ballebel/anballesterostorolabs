@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="//www.w3schools.com/lib/w3.css">
+<body style="margin:0;padding:50px">
+
+<div class="w3-container w3-section w3-border w3-round-xlarge w3-dark-grey">
+  <div class="w3-text-white">
+    <h1><center>Contact List</center></h1>
+    <p></p>
+  </div>
+</div>
+
+<h1>Listing Contacts</h1>
+ 
+ 
+<div class="w3-responsive">
+  <table class="w3-table w3-striped w3-bordered w3-card-4">
+    <thead>
+      <tr class="w3-grey">
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+   
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.name %></td>
+        <td><%= article.phone %></td>
+        <td><%= article.email %></td>
+        <td><%= link_to 'Show', article_path(article) %></td>
+        <td><%= link_to 'Edit', edit_article_path(article) %></td>
+        <td><%= link_to 'Delete', article_path(article),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+
+  </table>
+</div>
+<%= button_to 'New contact', new_article_path , :method => :get, class:"w3-btn-block w3-dark-grey"%>
+
+<p><small>w3 css template by Refsnes Data.</small></p>
+</body>
+</html>
+
+

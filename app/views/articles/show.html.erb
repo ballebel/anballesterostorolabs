@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="//www.w3schools.com/lib/w3.css">
+<body style="margin:0;padding:50px">
+
+<div class="w3-container">
+    <div class="w3-card-4" style="width:100%">
+    <header class="w3-container w3-light-grey">
+      <h3><%= @article.name %></h3>
+    </header>
+    <div class="w3-container">
+      <img src="https://cdn.schd.ws/common/img/avatar-empty.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+      <p>Phone: <%= @article.phone %><br>Email: <%= @article.email %></p>
+      <br>
+    </div>
+    <%= button_to 'Edit', edit_article_path(@article) , :method => :get, class:"w3-btn-block w3-grey" %>
+    <%= button_to 'Back', root_path , :method => :get, class:"w3-btn-block w3-dark-grey" %>
+  </div>
+</div>
+
+</body>
+</html>

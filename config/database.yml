@@ -1,0 +1,18 @@
+connection: &connection
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: ballebel
+  password: insert
+
+development:
+  <<: *connection
+  database: ToroLabs
+
+test:
+  <<: *connection
+  database: ToroLabs
+
+production:
+  <<: *connection
+  database: ToroLabs
